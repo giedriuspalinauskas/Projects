@@ -1,0 +1,153 @@
+html,
+  body{
+    height: 100%;
+    background-color: white;
+  }
+
+* {
+    box-sizing: border-box;
+  }
+
+.aukstis-50 {
+    height: 10vh;
+}
+.aukstis-60 {
+    height: 70vh;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+
+
+
+/* --------------------------------Bendros css komandos -------------------------------- */
+
+
+
+/* -------------------------------- Header --------------------------------------------- */
+header{
+  font-size: 13px;
+}
+header a:hover{
+    background-color: #222222;
+    style: none;
+    border-radius: 2vh;
+    color: white;
+    text-decoration: none;
+}
+
+header a{
+  color: white;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+header a svg{
+  height: 20px;
+  width: 10px;
+  fill: white;
+}
+
+/* -----------------------------  Nav Bar ---------------------------------------------- */
+nav{
+
+}
+li a {
+
+}
+
+
+
+li a:hover{
+    background-color: #222222;
+    style: none;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a img{
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  margin:4%;
+}
+
+li{
+  list-style: none;
+  color: black;
+}
+
+nav a{
+  color: white;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+nav form a img{
+  height: 25px;
+  width: 30px;
+  background-color: white;
+}
+
+button img {
+  height: 20px;
+}
+
+
+/* --------------------------------------FOOTER--------------------------------------------------- */
+
+footer p{
+  color: white;
+  font-size: 10px;
+}
+
+
+/* ---------------------------------------- KLASES -------------------------------------------- */
+.juoda {
+  background-color: #000000;
+  border-top-style:  solid;
+  border-color: #222222;
+}
+
+.dropdown-menu:hover{
+  background-color: black;
+  color: black;
+}
+
+.zemelapis{
+  width: 100%;
+  height: 400px;
+}
+
+.pasleptas{
+  display: none;
+}
+
+
+
+
+#paieska{
+  width: 80%;
+  height: 30px;
+  padding: 2%;
+  padding-left: 5%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  border-left: solid;
+  border-color: #222222;
+  text-decoration: none;
+}
+
+#p-migtukas{
+  width: 20%;
+  height: 30px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  background-color: white;
+}
