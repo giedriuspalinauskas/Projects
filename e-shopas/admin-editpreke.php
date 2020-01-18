@@ -41,7 +41,14 @@ $preke = getPreke($_POST['id']);
       </div>
       <div class="row mt-2">
         <div class="col-3">
-          <h5 for="">kiekis: </h5>
+          <h5 for="">Kaina: </h5>
+        </div>
+        <div class="col">
+          <input class="p-2" style="width: 100%" type="text" name="kiekis" value="<?php echo $preke['kaina'] ?>">
+        </div>
+      </div>
+        <div class="col-3">
+          <h5 for="">Kiekis: </h5>
         </div>
         <div class="col">
           <input class="p-2" style="width: 100%" type="text" name="kiekis" value="<?php echo $preke['kiekis'] ?>">

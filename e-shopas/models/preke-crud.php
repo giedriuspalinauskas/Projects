@@ -15,9 +15,9 @@ function getPreke($nr){
 
 
 // KURTI VARTOTOJA
-function createPreke($pav, $antraste, $nuolaida, $kiekis, $pozicija, $kategorija, $lytis) {
+function createPreke($pav, $antraste, $nuolaida, $kiekis, $pozicija, $kategorija, $lytis, $kaina) {
   $manoSQL = "INSERT INTO prekes
-                  VALUES (NULL, '$pav', '$antraste', '$nuolaida', NOW(), '$kiekis', '$pozicija', '$kategorija', '$lytis')
+                  VALUES (NULL, '$pav', '$antraste', '$nuolaida', NOW(), '$kiekis', '$pozicija', '$kategorija', '$lytis', '$kaina')
              ";
   $arPavyko = mysqli_query(getprisijungimas(),$manoSQL);
   if($arPavyko == false && DEBUG_MODE > 0){
@@ -38,7 +38,7 @@ function deletePreke($nr){
 
 
 // GALIMA EDITINTI VAROTOJA
-function updatePreke ($id, $pav, $antraste, $nuolaida, $data, $kiekis, $pozicija, $kategorija, $lytis){
+function updatePreke ($id, $pav, $antraste, $nuolaida, $data, $kiekis, $pozicija, $kategorija, $lytis, $kaina){
   $manoSQL = "UPDATE prekes
               SET
                 pavadinimas = '$pav',
@@ -48,7 +48,8 @@ function updatePreke ($id, $pav, $antraste, $nuolaida, $data, $kiekis, $pozicija
                 kiekis = '$kiekis',
                 pozicija = '$pozicija',
                 kategorija = '$kategorija',
-                lytis = '$lytis'
+                lytis = '$lytis',
+                kaina = '$kaina'
               WHERE ID = '$id'
              ";
   mysqli_query(getPrisijungimas(), $manoSQL);

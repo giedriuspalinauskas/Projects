@@ -43,6 +43,14 @@
   </div>
   <div class="row p-2 mt-1 ">
     <div class="col-2">
+      <label for="">Kaina : </label>
+    </div>
+    <div class="col">
+      <input style="width: 100%; height:30px" type="text" name="kaina" value="">
+    </div>
+  </div>
+  <div class="row p-2 mt-1 ">
+    <div class="col-2">
       <label for="">Pozicija : </label>
     </div>
     <div class="col">
@@ -60,9 +68,10 @@
     <div class="col">
       <select name="kategorija" value="" class="form-control">
         <option></option>
-        <option>raktu</option>
-        <option>kaklo</option>
-        <option>automobiliu</option>
+        <option>Apyrankes</option>
+        <option>Raktu</option>
+        <option>Kaklo</option>
+        <option>Automobiliu</option>
       </select>
     </div>
   </div>
@@ -75,6 +84,7 @@
         <option></option>
         <option>vyr</option>
         <option>mot</option>
+        <option>vyr_mot</option>
       </select>
     </div>
   </div>

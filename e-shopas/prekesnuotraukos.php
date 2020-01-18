@@ -1,7 +1,7 @@
 <?php
  include('header.php') ;
 ?>
-<a class="btn bg-dark text-white m-2" href="admin.php"> < Atgal </a>
+<a class="btn bg-dark text-white m-2" href="admin-prekes.php"> < Atgal </a>
 <a class="btn bg-primary text-white m-2" href="admin-newpreke.php"> + Prideti Nauja preke </a>
 <div class="row ">
   <div class="col d-flex justify-content-center">
@@ -19,7 +19,6 @@
           <th scope="col">Antraste</th>
           <th scope="col">Nuolaida</th>
           <th scope="col">Prekes įdejimo data</th>
-          <th scope="col">Kaina</th>
           <th scope="col">Kiekis</th>
           <th scope="col">Pozicija</th>
           <th scope="col">Kategorija</th>
@@ -33,8 +32,8 @@
       <tbody>
         <?php
         $i = 1;
-        $VisosPrekes = getPrekes();
-        while ($preke = mysqli_fetch_assoc($VisosPrekes)) {?>
+        $preke = getPreke($_GET['id']);
+         ?>
           <form class="" action="admin-editpreke.php" method="post">
             <input type="hidden" style="width: 100%" type="text" name="id" value="<?php echo $preke['ID'] ?>">
             <tr style="font-size: 12px">
@@ -43,19 +42,34 @@
               <td><?php echo $preke['antraste']  ?></td>
               <td><?php echo $preke['nuolaida']  ?></td>
               <td><?php echo $preke['data']  ?></td>
-              <td><?php echo $preke['kaina']  ?> €</td>
               <td><?php echo $preke['kiekis']  ?></td>
               <td><?php echo $preke['pozicija']  ?></td>
               <td><?php echo $preke['kategorija']  ?></td>
               <td><?php echo $preke['lytis']?></td>
               <td> <button class="btn btn-sm bg-dark text-white" type="submit" name="button"> Edit</button> </td>
             </form>
-              <td> <a class="btn btn-sm bg-warning text-white" href="controler/deletepreke.php?id=<?php echo $preke['ID'] ?>">Remove</a> </td>
-              <td> <a class="btn btn-sm bg-primary text-white" href="addimg.php?id=<?php echo $preke['ID'] ?>">+Nuotrauka</a> </td>
-              <td> <a class="btn btn-sm bg-dark text-white" href="prekesnuotraukos.php?id=<?php echo $preke['ID'] ?>">Nuotraukos</a> </td>
             </tr>
-        <?php } //BAIGESI WHILE MASYVAS ?>
       </table>
+      <div class="row ">
+        <div class="col d-flex justify-content-center">
+          <h1>Nuotraukos</h1>
+        </div>
+      </div>
+      <div class="row">
+        <?php
+        $nuotraukos = getImgsByPreke($_GET['id']);
+        while($nuotrauka = mysqli_fetch_assoc($nuotraukos)){ ?>
+        <div class="col-4">
+          <form class="" action="controler/deleteImg.php" method="post">
+            <img src="img/lg<?php echo $nuotrauka['pavadinimas'] ?>" alt="">
+            <input type="hidden" type="text" name="id" value="<?php echo $nuotrauka['ID'] ?>">
+            <button class="btn btn-sm bg-warning text-white m-2" type="submit" name="button"> Delete</button>
+        </form>
+        </div>
+        <?php
+      } //WHILE MASYVO PABAIGA !
+      ?>
+      </div>
   </div>
 </div>
 

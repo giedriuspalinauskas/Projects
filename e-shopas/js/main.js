@@ -163,3 +163,39 @@ $('#Prisijungti').on('click', function() {
 });
 
 }); //Prisijungimo funkcijos pabaiga
+
+
+$('.pirkti').on('click', function(){
+  var kiekis = $(this).parent().parent().parent().parent().find(".kiekis").val();
+  let index = $(this).parent().parent().parent().parent().find(".index").val();
+  console.log(kiekis);
+  console.log(index);
+  $.ajax({
+  type: "POST",
+  url: "controler/prekeKrepselis.php",
+  data:{kiekis: kiekis, index: index},
+  success: function() {
+  }
+});
+
+}); //PIRKTI FUNKCIJOS PABAIGA
+
+// Krepselio kiekio ir sumos keitimas funkcija
+$('.krepselio_kiekis').on('change', function(){
+  let kiekis = $(this).val();
+  let index = $(this).parent().parent().find('.index').val();
+  $(this).parent().parent().find('.kaina').html('veikia');
+  console.log(kiekis);
+  $.ajax({
+  type: "POST",
+  url: "controler/krepselioFunctions.php",
+  data:{kiekis: kiekis, index: index},
+  success: function(gryzo) {
+    gryzoPaverstasIJSON = JSON.parse(gryzo);
+    console.log("suveikia");
+    $('.kaina'+index).html(gryzoPaverstasIJSON.kaina.toFixed(2) + ' &euro;');
+    $('#visokaina').html('<strong>' + gryzoPaverstasIJSON.suma.toFixed(2) + ' &euro; </strong>');
+    $('#visokiekis').html(gryzoPaverstasIJSON.visaskiekis.toFixed());
+  }
+});
+}); //KREPSELIO KIEKIO ir sumos KEITIMAS
