@@ -8,6 +8,10 @@ session_start();
 if (isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
 };
+
+if(!isset($_SESSION['krepselis'])){
+  $_SESSION['krepselis'] =[];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +44,7 @@ if (isset($_SESSION['user'])) {
                   <?php if ($user['level'] > 1) { ?>
                     <a class="dropdown-item" href="admin.php">Admin aplinka</a>
                 <?php  } ?>
+                  <a class="dropdown-item" href="vartotojoUzsakymai.php">Uzsakymai</a>
                   <a class="dropdown-item" href="controler/logout.php">Log Out</a>
                 </div>
            </li>
@@ -71,11 +76,11 @@ if (isset($_SESSION['user'])) {
                     Vyriški Aksesuarai
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="prekes.php?kategorija=&lytis=vyr">Visos vyriškos prekės</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Apyrankes&lytis=vyr">Apyrankės</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Raktu&lytis=vyr">Raktų Pakabukai</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Kaklo&lytis=vyr">Kaklo papuošalai</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Automobiliu&lytis=vyr">Automobilių aksesuarai</a>
-                    <a class="dropdown-item" href="prekes.php?kategorija=&lytis=vyr">Visos vyriškos prekės</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -83,11 +88,11 @@ if (isset($_SESSION['user'])) {
                     Moteriški Aksesuarai
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="prekes.php?kategorija=&lytis=mot">Visos moteriškos prekės</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Apyrankes&lytis=mot">Apyrankės</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Raktu&lytis=mot">Raktų pakabukai</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Kaklo&lytis=mot">Kaklo papuošalai</a>
                     <a class="dropdown-item" href="prekes.php?kategorija=Automobiliu&lytis=mot">Automobilių aksesuarai</a>
-                    <a class="dropdown-item" href="prekes.php?kategorija=&lytis=mot">Visos moteriškos prekės</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -106,6 +111,8 @@ if (isset($_SESSION['user'])) {
             <!-- end paieska -->
             <!-- shopping cart -->
             <div class="col-md-3 col-sm-9 col-xs-12">
-            <a class=" ml-1 btn btn-light" href="krepselis.php">Krepselis(<?php echo count($_SESSION['krepselis']); ?>)</a>
+
+                <a class=" ml-1 btn btn-light " id="krepselis" href="krepselis.php">Krepselis(<?php echo count($_SESSION['krepselis']); ?>)</a>
+
           </div>
         </nav>

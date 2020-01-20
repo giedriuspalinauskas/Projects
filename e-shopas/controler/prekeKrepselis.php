@@ -23,8 +23,11 @@ if ($tikrinimas == 0) {
 
   $count = count($_SESSION['krepselis']);
   $_SESSION['krepselis'][$count] = $krepselis;
-  print_r($_SESSION);
-} else $_SESSION['krepselis'][$prekesID]['kiekis'] = $_SESSION['krepselis'][$prekesID]['kiekis'] + $_POST['kiekis'];
+  echo $krepseliokiekis = $count + 1;
+} else {
+  $_SESSION['krepselis'][$prekesID]['kiekis'] = $_SESSION['krepselis'][$prekesID]['kiekis'] + $_POST['kiekis'];
+  echo $krepseliokiekis = $count;
+}
 
 
  ?>

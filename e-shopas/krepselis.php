@@ -24,6 +24,7 @@
         $i = 0;
         $suma = 0;
         $kiekis = 0;
+        if(count($_SESSION['krepselis']) != 0)  {
         while ($preke = $_SESSION['krepselis'][$i]) { ?>
             <tr style="font-size: 12px">
               <th scope="row "><?php echo $a++; ?></th>
@@ -44,7 +45,8 @@
         if (!isset($_SESSION['krepselis'][$i])) {
           $i++;
         }
-      } //BAIGESI WHILE MASYVAS ?>
+      } //BAIGESI WHILE MASYVAS
+    } else echo "Krepselis tuscias"; ?>
             <tr class="bg-dark text-white">
                 <td></td>
                 <td colspan="2" align="right"><strong>Viso:</strong></td>
@@ -54,7 +56,11 @@
 
           </tr>
       </table>
-
+      <div class="row">
+        <div class="col d-flex justify-content-end mb-2 mr-5">
+          <a class="btn btn-dark" href="uzsakymas.php">PIRKTI</a>
+        </div>
+      </div>
   </div>
 </div>
 

@@ -168,13 +168,12 @@ $('#Prisijungti').on('click', function() {
 $('.pirkti').on('click', function(){
   var kiekis = $(this).parent().parent().parent().parent().find(".kiekis").val();
   let index = $(this).parent().parent().parent().parent().find(".index").val();
-  console.log(kiekis);
-  console.log(index);
   $.ajax({
   type: "POST",
   url: "controler/prekeKrepselis.php",
   data:{kiekis: kiekis, index: index},
-  success: function() {
+  success: function(count) {
+    $('#krepselis').html('Krepselis(' + count + ')');
   }
 });
 
@@ -199,3 +198,20 @@ $('.krepselio_kiekis').on('change', function(){
   }
 });
 }); //KREPSELIO KIEKIO ir sumos KEITIMAS
+
+
+$('.radio').on('click', function(){
+  let pasirinkimas = $(this).children().children().val();
+  let visasuma = $('#visokaina').text().slice(0, 6);
+  let skaicius = parseFloat(visasuma);
+  console.log(pasirinkimas);
+  if (pasirinkimas == "Kurjeris" ) {
+    $('#siuntimas').html('3.50 &euro;');
+    let kurejis = skaicius + 3.5;
+    $('#visokaina').html(kurejis + '&euro;');
+  } else {
+    $('#siuntimas').html('0.00 &euro;');
+    let parduotuve = skaicius - 3.5;
+    $('#visokaina').html(parduotuve + '&euro;');
+}
+});
