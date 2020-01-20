@@ -63,5 +63,12 @@ function getUzsakymai($kiekis = 999999999){
 
     return $vartotojuObj;
 }
+function getUzsakymaiByVartotojoid( $id){
+    $ManoSql = "SELECT * FROM uzsakymas WHERE vartotojo_id = $id ";
+    $vartotojuObj = mysqli_query(getPrisijungimas(), $ManoSql);
+    // $gydytojuMasyvas = mysqli_fetch_assoc($gydytojaiObj);
+
+    return $vartotojuObj;
+}
 
 // mysqli_close(getPrisijungimas());

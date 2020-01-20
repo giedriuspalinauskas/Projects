@@ -15,6 +15,12 @@
         <a class="btn bg-dark text-white" href="admin-vartotojai.php">Vartotojai</a>
       </div>
     </div>
+    <div class="row mt-2">
+      <div class="col">
+        <label for=""> Uzsakymai :  </label>
+        <a class="btn bg-dark text-white" href="admin-uzsakymai.php">Uzsakymai</a>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -3,6 +3,8 @@ include('models/prisijungimas-db.php');
 include('models/vartotojai-crud.php');
 include('models/preke-crud.php');
 include('models/img-crud.php');
+include('models/uzsakymas-crud.php');
+include('models/uzsakymo-prekes-crud.php');
 
 session_start();
 if (isset($_SESSION['user'])) {

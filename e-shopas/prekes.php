@@ -38,7 +38,7 @@ if ($kategorija !== "" && isset($lytis)) {
               <p class="card-text"><?php echo $preke['kaina']?> €</p>
               <div class="row">
                 <div class="col-6">
-                  <button type="submit" class="btn btn-dark" name="button">Prežiurėti</button>
+                  <a class="btn btn-dark text-white" href="prekes-template.php?id=<?php echo $preke['ID'] ?>">Perziureti</a>
                 </div>
                 <div class="col">
                   <input type="hidden" class="index" name="id" value="<?php echo $preke['ID'] ?>">
@@ -74,7 +74,7 @@ $prekes = getPrekesByLyt($lytis);
             <p class="card-text"><?php echo $preke['kaina']?> €</p>
             <div class="row">
               <div class="col-6">
-                <button type="submit" class="btn btn-dark" name="button">Prežiurėti</button>
+                <a class="btn btn-dark text-white" href="prekes-template.php?id=<?php echo $preke['ID'] ?>">Perziureti</a>
               </div>
               <div class="col">
                 <input type="hidden" class="index" name="id" value="<?php echo $preke['ID'] ?>">

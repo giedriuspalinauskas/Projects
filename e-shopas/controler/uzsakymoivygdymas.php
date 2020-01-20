@@ -14,7 +14,19 @@ if ($_POST['atsiemimas'] != "Parduotuve") {
   $suma += 3.5;
 }
 $adresas = $_POST['adresas'].", ".$_POST['miestas'].", ".$_POST['pastokodas'].", ".$_POST['salis'];
-$vartotojo_id = $_SESSION['user']['ID'];
+if (isset($_SESSION['user'])) {
+  $vartotojo_id = $_SESSION['user']['ID'];
+  createUzsakymas(
+                  $_POST['vardas'],
+                  $_POST['pavarde'],
+                  $_POST['epastas'],
+                  $adresas,
+                  $_POST['telnr'],
+                  $_POST['atsiemimas'],
+                  $suma,
+                  $vartotojo_id
+                );
+} else {
 createUzsakymas(
                 $_POST['vardas'],
                 $_POST['pavarde'],
@@ -22,9 +34,9 @@ createUzsakymas(
                 $adresas,
                 $_POST['telnr'],
                 $_POST['atsiemimas'],
-                $suma,
-                $vartotojo_id
+                $suma
               );
+}
 $last_id =  mysqli_insert_id(getprisijungimas());
 
 for ($i=0; $i < $count ; $i++) {

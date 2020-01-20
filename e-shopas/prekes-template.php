@@ -1,7 +1,7 @@
 <?php include('header.php')?>
 <?php
-$nuotraukos = getImgsByPreke($_POST['id']);
-$preke = getPreke($_POST['id']);
+$nuotraukos = getImgsByPreke($_GET['id']);
+$preke = getPreke($_GET['id']);
 ?>
 
 <div class="row  ">
@@ -23,7 +23,7 @@ $preke = getPreke($_POST['id']);
       </ol>
       <div class="carousel-inner">
         <?php
-        $nuotraukos = getImgsByPreke($_POST['id']);
+        $nuotraukos = getImgsByPreke($_GET['id']);
         $i=0;
         while ($nuotrauka = mysqli_fetch_assoc($nuotraukos)){
           if ($i == 0) { ?>

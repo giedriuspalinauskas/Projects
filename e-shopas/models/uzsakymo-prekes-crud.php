@@ -52,7 +52,7 @@ function updateUzsakymoPreke ($id, $pav, $aprasymas, $pozicija, $prekes_id){
 
 
 // Gaudi visus galimus vartotojus
-function getImgsByUzsakymo($id, $kiekis = 999999999){
+function getUzsakymoPrekeByUzsakymoID($id){
     $ManoSql = "SELECT * FROM uzsakymo_prekes WHERE uzsakymo_id = '$id' ";
     $imgObj = mysqli_query(getPrisijungimas(), $ManoSql);
     // $gydytojuMasyvas = mysqli_fetch_assoc($gydytojaiObj);
