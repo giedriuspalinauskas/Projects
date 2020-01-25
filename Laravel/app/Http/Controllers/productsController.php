@@ -77,6 +77,8 @@ class productsController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
+        $product->views += 1;
+        $product->save();
         return view('products.template')->with('product', $product);
     }
 
@@ -121,7 +123,7 @@ class productsController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-        unlink('storage/');
+        unlink('storage/'.$product->image);
         $product->delete();
         return redirect('/products')->with('success', 'Product Delete');
     }
