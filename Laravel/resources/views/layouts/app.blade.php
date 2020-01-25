@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Bandom') }}</title>
     <link rel="stylesheet" href="{{asset('libs/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -31,6 +32,7 @@
 
     <script type="text/javascript" src="{{asset('libs/jquery-3.4.1.min.js')}}"> </script>
     <script type="text/javascript" src="{{asset('libs/bootstrap/js/bootstrap.bundle.min.js')}}"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
 </body>

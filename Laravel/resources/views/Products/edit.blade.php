@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col form-group mr-5 ml-5">
               <label for="">Description: </label>
-              <textarea class="form-control" name="description" rows="8" cols="120">{{$product->description}}</textarea>
+              <textarea class="form-control" id="summernote" name="description" rows="8" cols="120">{{$product->description}}</textarea>
             </div>
           </div>
           <div class="row">
@@ -51,11 +51,3 @@
   </div>
 
 @endsection
-
-
-{{--
-<form class="pull-right" action="{{ route('products.update', $product->id) }}" method="POST">
-  {{ method_field('PUT') }}
-  @csrf
-  <button class="btn btn-success" type="submit" name="submit">Edit</button>
-</form> --}}

@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col form-group mr-5 ml-5">
               <label for="">Description: </label>
-              <textarea class="form-control" name="description" rows="8" cols="120"></textarea>
+              <textarea class="form-control" id="summernote" name="description" rows="8" cols="120"></textarea>
             </div>
           </div>
           <div class="row">
