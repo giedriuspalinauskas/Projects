@@ -3,7 +3,7 @@ console.log("labas");
 // alert("issokanti zinute");
 // document.write("labas ekrane");
 
-
+// ----------------- IRASYTI DUOMENIS ------------------------------
 $('#forma').on("click", function(error) {
   let pavadinimas = $('#pavadinimas').val();
   let tekstas = $('#tekstas').val();
@@ -38,9 +38,26 @@ $('#forma').on("click", function(error) {
              antraste: tekstas
            },
      success: function() {
-       alert("pavyko!")
      }
    });
  }
 
 });
+
+// ----------------- TRINTI DUOMENIS -----------------------------------
+function deleteChecked(){
+				var items=document.getElementsByName('checkbox');
+				var selectedItem="";
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox' && items[i].checked==true)
+						selectedItem = items[i].value+"\n";
+            $.ajax({
+              url: "controler/deleteTekstas.php",
+              type: "GET",
+              data: { id: selectedItem  },
+            success: function() {
+            }
+          });
+				}
+        location.reload();
+			}
