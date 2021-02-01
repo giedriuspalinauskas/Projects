@@ -16,7 +16,7 @@ include('models/prisijungimas-db.php');
     <body class="container">
       <!-- -------------------------------FORMA DARBO UZDUOCIAI ------------------------------------- -->
       <div class="text-center mb-5">
-        <h1>TO-DO</h1>
+        <h1>TO-DO_Mano</h1>
       </div>
       <form class="container">
       <div class="form-group">
@@ -24,7 +24,6 @@ include('models/prisijungimas-db.php');
         <input type="text" class="form-control mb-2" id="pavadinimas" name="pavadinimas">
         <p id="msg_pavadinimas"></p>
         <label>Jūsų darbo užduotis</label>
-        <!-- textarea duomenu bazeja telpa tik 500 simboliu -->
         <textarea class="form-control" rows="5" id="tekstas" name="antraste" maxlength="500"></textarea>
         <p id="msg_antraste"></p>
         <div class="float-right">
